@@ -1,0 +1,35 @@
+// Selecciona todos los enlaces de la barra de navegación
+const navLinks = document.querySelectorAll('.navbar-link');
+
+// Obtiene la URL actual (solo la parte del archivo)
+const currentPage = window.location.pathname.split('/').pop();
+
+navLinks.forEach(link => {
+    // Verifica si el `href` del enlace coincide con la página actual
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+    }
+});
+// Seleccionar el botón hamburguesa y el menú
+const menuToggle = document.querySelector('.navbar-toggler');
+const navbar = document.querySelector('#navbarNav');
+
+// Alternar menú al hacer clic en el botón hamburguesa
+menuToggle.addEventListener('click', () => {
+    if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show'); // Cierra el menú si está abierto
+    } else {
+        navbar.classList.add('show'); // Abre el menú si está cerrado
+    }
+});
+
+// Cerrar menú al hacer clic en un enlace
+const navbarLinks = document.querySelectorAll('.nav-link');
+
+navbarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('show'); // Cierra el menú al seleccionar un enlace
+    });
+});
+
+
