@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería con Lightbox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Galería de Obras</h1>
+    <div class="image-grid">
+        <!-- Lightbox 1 -->
+        <div class="image-item">
+            <img src="images/alucobond.png" alt="Imagen 1" class="main-image"
+                 data-images='["images/alucobond.png", "images/alucobond2.png", "images/alucobond3.png"]'
+                 data-title="Obra Alucobond"
+                 onclick="openLightbox(this)">
+            <div class="overlay-text" onclick="openLightbox(this)">Obra Alucobond</div>
+        </div>
+
+        <!-- Lightbox 2 -->
+        <div class="image-item">
+            <img src="images/Casasnova1.png" alt="Imagen 2" class="main-image"
+                 data-images='["images/Casasnova1.png", "images/Casasnova2.png", "images/Casasnova3.png"]'
+                 data-title="Casas Nova"
+                 onclick="openLightbox(this)">
+            <div class="overlay-text" onclick="openLightbox(this)">Casas Nova</div>
+        </div>
+
+        <!-- Lightbox 3 -->
+        <div class="image-item">
+            <img src="images/Casasnova2.png" alt="Imagen 3" class="main-image"
+                 data-images='["images/Casasnova2.png", "images/Casasnova3.png", "images/Casasnova4.png"]'
+                 data-title="Casas Nova 2"
+                 onclick="openLightbox(this)">
+            <div class="overlay-text" onclick="openLightbox(this)">Casas Nova 2</div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="Imagen ampliada">
+            <div id="lightbox-title" class="lightbox-title"></div>
+        </div>
+        <div class="navigation">
+            <button id="prev-button" onclick="navigate(-1)">&lt;</button>
+            <button id="next-button" onclick="navigate(1)">&gt;</button>
+        </div>
+        <button id="close-button" onclick="closeLightbox()">&#10005;</button>
+        <div id="indicators" class="indicators"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
